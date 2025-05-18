@@ -6,7 +6,7 @@ from car import draw_car              # Import car drawing function
 from suv import draw_suv              # Import SUV drawing function
 from truck import draw_truck          # Import truck drawing function
 
-# Utility function to generate a random hex color
+# Function to generate a random hex color
 def random_color():
     return "#" + ''.join(random.choices('0123456789ABCDEF', k=6))
 
@@ -65,13 +65,13 @@ class VehicleApp:
             f"Price: ${vehicle.get_price()}",
         ]
 
-        # Add vehicle-specific detail
+        # Adding vehicle-specific details
         if vehicle_type == "CAR":
-            details.append(f"Number of doors: {vehicle.get_doors()}")
+            details.append(f"Number of doors: {vehicle.get_doors()}") #4 doors
         elif vehicle_type == "SUV":
-            details.append(f"Passenger Capacity: {vehicle.get_pass_cap()}")
+            details.append(f"Passenger Capacity: {vehicle.get_pass_cap()}")#5 doors
         elif vehicle_type == "TRUCK":
-            details.append(f"Drive type: {vehicle.get_drive_type()}")
+            details.append(f"Drive type: {vehicle.get_drive_type()}") #4 wheel drive
 
         # Display each line of detail on the canvas
         for i, line in enumerate(details):
