@@ -1,6 +1,6 @@
 import tkinter as tk
 import random
-from vehicles import Car, SUV, Truck  # Import vehicle classes from external module
+from vehicles import Car, SUV, Truck  # Import vehicle classes 
 from roses import Roses               # Import rose drawing class
 from car import draw_car              # Import car drawing function
 from suv import draw_suv              # Import SUV drawing function
@@ -86,7 +86,7 @@ class VehicleApp:
         self.main_canvas.create_rectangle(3, 3, self.canvas_width - 3, self.canvas_height - 3, outline="black", width=4)
 
         # Generate random values
-        scale = random.uniform(1.2, 1.1)
+        scale = random.uniform(1.1, 1.2) #Uniform floating point number between 1.1 and 1.2
         base_color = random_color()
         secondary_color = random_color()
         window_color = "#cccccc"

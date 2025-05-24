@@ -22,7 +22,7 @@ class Roses:
         self.rose_turtle.speed(0) #Fastest speed
 
         self.draw_roses()
-        self.screen.update()  # Refresh screen after drawing all roses
+        self.screen.update()  # Function below that refreshes the screen after drawing all roses
 
     def draw_roses(self): #7 roses
         positions = [(-300, -30), (-200, -30), (-100, -30), (0, -30), (100, -30), (200, -30), (300, -30)] #Rose positions

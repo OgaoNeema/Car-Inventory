@@ -26,11 +26,11 @@ def draw_suv(canvas, x, y, scale, base_color, window_color, wheel_color, rim_col
         canvas.create_oval(x+dx*scale, y+60*scale, x+(dx+50)*scale, y+110*scale, fill=wheel_color, outline="black", width=3)
         canvas.create_oval(x+(dx+10)*scale, y+70*scale, x+(dx+40)*scale, y+100*scale, fill=rim_color, outline="black", width=2)
 
-    # Headlight (front-left square, reduced size)
+    # Headlight 
     headlight_size = 10 * scale
     canvas.create_rectangle(body_start, y + 35*scale, body_start + headlight_size, y + 35*scale + headlight_size,
                             fill="yellow", outline="black", width=1)
 
-    # Taillight (rear-right square, reduced size)
+    # Taillight 
     canvas.create_rectangle(body_end - headlight_size, y + 35*scale, body_end, y + 35*scale + headlight_size,
                             fill="red", outline="black", width=1)
