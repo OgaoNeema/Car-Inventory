@@ -55,7 +55,7 @@ class VehicleApp:
         vehicle = vehicle_instances[vehicle_type]
 
         # Display a title
-        self.main_canvas.create_text(720, 50, text="VEHICLE INVENTORY", font=("Helvetica", 14, "bold", "underline"))
+        self.main_canvas.create_text(720, 50, text="USED CAR INVENTORY", font=("Helvetica", 14, "bold", "underline"))
 
         # Prepare a list of detail
         details = [
