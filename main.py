@@ -1,16 +1,16 @@
 import tkinter as tk
 import random
 from vehicles import Car, SUV, Truck  # Import vehicle classes 
-from roses import Roses               # Import rose drawing class
-from car import draw_car              # Import car drawing function
-from suv import draw_suv              # Import SUV drawing function
+from roses import Roses               # Import roses drawing class
+from car import draw_car              # Import function to draw the car
+from suv import draw_suv              # Import function to draw the suv
 from truck import draw_truck          # Import truck drawing function
 
 # Function to generate a random hex color
 def random_color():
     return "#" + ''.join(random.choices('0123456789ABCDEF', k=6))
 
-# Dictionary holding instances of each vehicle type with sample data
+# Dictionary holding instances of each vehicle type with their respective data
 vehicle_instances = {
     "CAR": Car("BMW", 2001, 70000, 15000, 4),
     "SUV": SUV("Volvo", 2000, 30000, 18500, 5),
@@ -55,9 +55,9 @@ class VehicleApp:
         vehicle = vehicle_instances[vehicle_type]
 
         # Display a title
-        self.main_canvas.create_text(720, 50, text="USED CAR INVENTORY", font=("Helvetica", 14, "bold", "underline"))
+        self.main_canvas.create_text(720, 50, text="VEHICLE INVENTORY", font=("Helvetica", 14, "bold", "underline"))
 
-        # Prepare a list of detail lines
+        # Prepare a list of detail
         details = [
             f"Make: {vehicle.get_make()}",
             f"Model: {vehicle.get_model()}",
@@ -69,7 +69,7 @@ class VehicleApp:
         if vehicle_type == "CAR":
             details.append(f"Number of doors: {vehicle.get_doors()}") #4 doors
         elif vehicle_type == "SUV":
-            details.append(f"Passenger Capacity: {vehicle.get_pass_cap()}")#5 doors
+            details.append(f"Passenger Capacity: {vehicle.get_pass_cap()}")#5 passangers
         elif vehicle_type == "TRUCK":
             details.append(f"Drive type: {vehicle.get_drive_type()}") #4 wheel drive
 
@@ -82,11 +82,11 @@ class VehicleApp:
         # Clear the canvas
         self.main_canvas.delete("all")
 
-        # Draw a border around the canvas
+        # Draw a black border around the canvas
         self.main_canvas.create_rectangle(3, 3, self.canvas_width - 3, self.canvas_height - 3, outline="black", width=4)
 
         # Generate random values
-        scale = random.uniform(1.1, 1.2) #Uniform floating point number between 1.1 and 1.2
+        scale = random.uniform(1.1, 1.3) #Uniform floating point number between 1.1 and 1.3
         base_color = random_color()
         secondary_color = random_color()
         window_color = "#cccccc"
@@ -100,7 +100,7 @@ class VehicleApp:
         elif vehicle_type == "SUV":
             draw_suv(self.main_canvas, x, y, scale, base_color, window_color, wheel_color, rim_color, secondary_color)
         elif vehicle_type == "TRUCK":
-            draw_truck(self.main_canvas, x, y, scale, base_color, secondary_color, window_color, wheel_color, rim_color)
+            draw_truck(self.main_canvas, 280, 200, scale, base_color, secondary_color, window_color, wheel_color, rim_color)
 
         # Show vehicle information and update flowers
         self.show_vehicle_info(vehicle_type)
