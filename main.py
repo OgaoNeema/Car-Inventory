@@ -21,7 +21,7 @@ vehicle_instances = {
 class VehicleApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Car Inventory")
+        self.root.title("Vehicle Inventory")
 
         # Set up the canvas for drawing vehicles
         self.canvas_width = 1000
